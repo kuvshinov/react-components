@@ -9,6 +9,15 @@ const ComponentsPage = () => {
             <div>
                 <Input id="text1" label="Input text" />
             </div>
+            <div>
+                <Input id="pwd2" label="Password" />
+            </div>
+            <div>
+                <Input id="helper" label="Text with helper" helper="Try to input something" />
+            </div>
+            <div>
+                <Input id="error" label="Input" value="Invalid text" error="Here is an error" />
+            </div>
         </div>
     );
 };
