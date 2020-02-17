@@ -1,5 +1,6 @@
 import React from 'react';
 import Input from '../../components/Input';
+import Button from '../../components/Button';
 
 const ComponentsPage = () => {
     return (
@@ -17,6 +18,10 @@ const ComponentsPage = () => {
             </div>
             <div>
                 <Input id="error" label="Input" value="Invalid text" error="Here is an error" />
+            </div>
+            <h3>Buttons</h3>
+            <div>
+                <Button text='text button' />
             </div>
         </div>
     );

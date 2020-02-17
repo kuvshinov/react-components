@@ -1,0 +1,39 @@
+@import "src/styles/colors";
+
+.btn {
+  height: 36px;
+  color: $black;
+  border: none;
+  outline: none;
+  font-size: .875rem;
+  font-weight: 500;
+  background-color: transparent;
+  min-width: 64px;
+  padding: 0 8px;
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+  vertical-align: center;
+  text-transform: uppercase;
+  letter-spacing: .0892857143em;
+  transition: background-color 120ms linear;
+
+  i {
+    font-size: 18px;
+    margin-right: 8px;
+  }
+
+  &:hover, &:active {
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: lighten($black, 90%);
+  }
+
+  &:active {
+    background-color: lighten($black, 85%);
+  }
+}
