@@ -3,6 +3,8 @@ import { useHistory } from 'react-router-dom';
 import Navigation, {Link} from '../layout/Navigation';
 import Header, {HeaderTitle} from '../layout/Header';
 import MainContainer from '../layout/MainContainer';
+import ThemeContext from '../context/theme-context';
+import Button from '../components/Button';
 
 const links = [
     { to: '/', name: 'Home'},
@@ -26,17 +28,22 @@ const Layout = ({ children }) => {
     );
 
     return (
-        <>
-            <Header onMenuClick={ () => setNavOpen(true) }>
-                <HeaderTitle>UI Components</HeaderTitle>
-            </Header>
-            <Navigation open={ navOpen } onOverlayClick={ () => setNavOpen(false) }>
-                { elems }
-            </Navigation>
-            <MainContainer withNav>
-                { children }
-            </MainContainer>
-        </>
+        <ThemeContext.Consumer>
+            {({theme, toggleTheme}) => (
+                <>
+                    <Header onMenuClick={ () => setNavOpen(true) }>
+                        <HeaderTitle>UI Components</HeaderTitle>
+                        <Button theme="dark" text={ theme } onClick={ toggleTheme } />
+                    </Header>
+                    <Navigation open={ navOpen } onOverlayClick={ () => setNavOpen(false) }>
+                        { elems }
+                    </Navigation>
+                    <MainContainer withNav>
+                        { children }
+                    </MainContainer>
+                </>
+            )}
+        </ThemeContext.Consumer>
     );
 };
 

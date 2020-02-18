@@ -1,12 +1,9 @@
 import React from 'react';
 
-import styles from './button.module.scss';
+import './button.scss';
 
-const Button = ({ type = 'button', style, text, ...rest }) => {
-    let btnStyle = styles.btn;
-    if (style) {
-        btnStyle += ' ' + styles[style];
-    }
+const Button = ({ type = 'button', style, text, theme, ...rest }) => {
+    let btnStyle = `btn ${ theme ? theme : '' } ${ style ? style : '' }`;
 
     return (
         <button className={ btnStyle } type={ type } { ...rest }>
